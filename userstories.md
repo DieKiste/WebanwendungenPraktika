@@ -13,8 +13,11 @@
 | 
 
 # 2. Mockups - Purple TransPlannner PPTP 
+![](img/Startseite.png)
+![](img/Projekt%20Anlegen.png)
 ![Projektübersicht.png](img/Projektübersicht.png)
 ![Projektseite.png](img/Projektseite.png)
+![](img/Arbeitsschritt.png)
 
 Seiten TODO: 
 - [ ] Artefaktliste
