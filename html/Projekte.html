@@ -23,6 +23,7 @@
     <a href="neuesProjekt.html"> Neues Projekt</a>
     
 </nav>
+<h1>Projekte</h1>
 
 <section>
     <fieldset>
@@ -61,13 +62,15 @@
 
 
 
-<fieldset action="localhost:11111" method="post">
+<fieldset>
     <legend>Anmeldung</legend>
-    <label for="username">Benutzername:</label>
-    <input type="text" name="username">
-    <label for="password">Passwort:</label>
-    <input type = "password" name="password">
-
+    <form action="localhost:11111" method="post">
+        <label for="username">Benutzername:</label>
+        <input type="text" name="username">
+        <label for="password">Passwort:</label>
+        <input type = "password" name="password">
+        <input type="submit" value="Anmelden">
+    </form>
 
 </fieldset>
 
