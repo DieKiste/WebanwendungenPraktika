@@ -58,13 +58,15 @@ Vorgesehen ist die Testung verschiedener Substanzen, darunter Kokain, LSD und Cr
     <a href="Projekt2.html#ziele">zu den Zielen</a>
 </nav>
 <section>
-<fieldset action="localhost:11111" method="post">
+<fieldset>
     <legend>Kommentar schreiben</legend>
-    <label for="rating">Bewertung:</label>
-    <input type="range" name="rating" min="0" max="5">
-    <label for="comment">Kommentar:</label>
-    <input type = "text" name="comment">
-    <input type="submit" value="Absenden">
+    <form action="localhost:11111" method="post">
+        <label for="rating">Bewertung:</label>
+        <input type="range" name="rating" min="0" max="5">
+        <label for="comment">Kommentar:</label>
+        <input type = "text" name="comment">
+        <input type="submit" value="Absenden">
+    </form>
 
 </fieldset>
 
@@ -72,13 +74,15 @@ Vorgesehen ist die Testung verschiedener Substanzen, darunter Kokain, LSD und Cr
 
 
 
-<fieldset action="localhost:11111" method="post">
+<fieldset>
     <legend>Anmeldung</legend>
-    <label for="username">Benutzername:</label>
-    <input type="text" name="username">
-    <label for="password">Passwort:</label>
-    <input type = "password" name="password">
-    <input type="submit" value="Anmelden">
+    <form action="localhost:11111" method="post">
+        <label for="username">Benutzername:</label>
+        <input type="text" name="username">
+        <label for="password">Passwort:</label>
+        <input type = "password" name="password">
+        <input type="submit" value="Anmelden">
+    </form>
 
 </fieldset>
 
