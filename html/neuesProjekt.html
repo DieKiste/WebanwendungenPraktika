@@ -5,7 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plan your amazing Projects in minutes with maximum transparency">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/projekt.css">
 </head>
+
+<style>
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+article {
+    width: 90%;
+    margin: 20px;
+}
+
+textarea{
+    width: 100%;
+}
+
+</style>
+
 <body>
 
 
@@ -16,43 +42,7 @@
             <source media="(min-width:640px)" srcset="../img/header670x67.png">
             <img src="../img/header320x34.png" alt="header">
         </picture>
-</header>
-<nav> 
-    <a href="Startseite.html"> <img src="../img/logo.svg"> </a>
-    <a href="Projekte.html"> Projekte </a>
-    <a href="neuesProjekt.html"> Neues Projekt</a>
-    
-</nav>
-
-
-<h1>Neues Projekt anlegen</h1>
-<fieldset>
-    <legend>Neues Projekt:</legend>
-    <form action="" method="post">
-        <label for="Projectname">Name:</label>
-        <input type="text" id="Projectname">
-        <label for="Projectmanager">Projektleiter:</label>
-        <input type="text" id="Projectmanager">
-        <label for="startdate">Startdatum:</label>
-        <input type="date" id="startdate">
-        <label for="enddate">Enddatum:</label>
-        <input type="date" id="enddate">
-        <label for="shortdescription">Kurzbeschreibung:</label>
-        <input type="text" id="shortdescription">
-        <label for="longdescription">Langbeschreibung:</label>
-        <textarea type="text" id="longdescription"></textarea>
-        <label for="projectgoal1">Erstes Projektziel:</label>
-        <input type="text" id="projectgoal1">
-        <label for="projectgoal2">Zweites Projekziel:</label>
-        <input type="text" id="projectgoal2">
-        <label for="logofile">Logodatei:</label>
-        <input type="file" accept=".svg">
-        <input type="submit" Value="Neues Projekt erstellen">
-    </form>
-</fieldset>
-
-
-<fieldset>
+        <fieldset class="login">
     <legend>Anmeldung</legend>
     <form action="localhost:11111" method="post">
         <label for="username">Benutzername:</label>
@@ -61,18 +51,72 @@
         <input type = "password" name="password">
         <input type="submit" value="Anmelden">
     </form>
-
+    <a href="">Neu Registrieren</a>
 </fieldset>
+</header>
+<nav> 
+    <a href="Startseite.html"> <img src="../img/logo.svg"> </a>
+    <a href="Projekte.html"> Projekte </a>
+    <a href="neuesProjekt.html"> Neues Projekt</a>
+    
+</nav>
+<form action="" method="post">
+<div class="container_title">
+    <label for="pictureUpload" class="custom-file-upload">
+            <img src="../img/PlaceholderImage.png">
+    </label>
+    <input type="file" accept=".svg" id="pictureUpload">
 
-<a href="">Neu Registrieren</a>
+    
+
+
+
+    <h1><input type="text" id="Projectname" placeholder="Projektnamename" style="font-size: 200%;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 10px;"></h1>
+    <p>Projektmanager: <input type="text" id="Projectmanager" placeholder="Projektmanager"></p>
+</div>
+
+
+<div class="container">
+<article>
+<h2 id="kurz">Kurzbeschreibung</h2>
+<textarea type="text" id="shortdescription" placeholder="Mein Tolles Projekt!"></textarea>
+
+
+
+<h2 id="lang">Langbeschreibung</h2>
+<textarea type="text" id="longdescription" placeholder="Hier steht ihre sehr sehr sehr sehr sehr ausfürliche Beschreibung"></textarea>
+
+<section id="ziele">
+    <h2>Projektziele</h2>
+    <ol>
+        <li><input type="text" id="projectgoal1" placeholder="Projektziel1"></li>
+        <li><input type="text" id="projectgoal2" placeholder="Projektziel2"></li>
+        
+    </ol>
+</section>
+</article>
+<div class="inhaltsmenue">
+        <a href="neuesProjekt.html#kurz">zur Kurzberschreibung</a>
+        <a href="neuesProjekt.html#lang">zur Langbeschreibung</a>
+        <a href="neuesProjekt.html#ziele">zu den Zielen</a>
+    </div>
+
+</div>
+<input type="submit" Value="Neues Projekt erstellen">
+</form>
+
+
 
 <footer> 
     <a href="Impressum.html">Impressum</a>
     <a href="Datenschutz.html">Datenschutzerklärung</a>
     <a href="Haftungsausschuss.html">Haftungsausschuss</a>
     <a href="copyright.html">Copyright und Kontaktinformationen</a>
-    <a href="Startseite.html">zurück zum Anfang</a>
+    
 
 </footer>
+<a class="returnToStart" href="Startseite.html">zurück zum Anfang</a>
 </body>
 </html>
