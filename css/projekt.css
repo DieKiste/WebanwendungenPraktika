@@ -1,0 +1,49 @@
+.inhaltsmenue {
+    list-style: none;
+    background-color: black;
+    max-width: 200px;
+    border-left: 3px solid blue;
+    padding: 3px;
+}
+
+.inhaltsmenue a:hover {
+    background-color: #87CEFA;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #cc00cc;
+    z-index: 100;
+    position: sticky;
+    top:0;
+}
+
+.container_title img {
+    max-height: 200px;
+}
+
+.container_title h1 {
+    font-size: 200%;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 10px;
+}
+
+.container_title p {
+    justify-self: flex-end;
+}
+
+input[name="comment"]{
+    background-color: purple;
+}
+
+input[name="comment"]:focus{
+    background-color: white;
+}

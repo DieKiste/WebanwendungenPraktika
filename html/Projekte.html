@@ -5,17 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plan your amazing Projects in minutes with maximum transparency">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/projekte.css">
 </head>
 <body>
-
-
-<header>
+    
+    
+    <header>
         <picture>
             <source media="(min-width:1920px)" srcset="../img/header1920x200.png">
             <source media="(min-width:1280px)" srcset="../img/header1200x133.png">
             <source media="(min-width:640px)" srcset="../img/header670x67.png">
             <img src="../img/header320x34.png" alt="header">
         </picture>
+        <fieldset class="login">
+            <legend>Anmeldung</legend>
+            <form action="localhost:11111" method="post">
+                <label for="username">Benutzername:</label>
+                <input type="text" name="username">
+                <label for="password">Passwort:</label>
+                <input type = "password" name="password">
+                <input type="submit" value="Anmelden">
+            </form>
+        
+            <a href="">Neu Registrieren</a>
+        </fieldset>
+        
 </header>
 <nav> 
     <a href="Startseite.html"> <img src="../img/logo.svg"> </a>
@@ -26,7 +41,8 @@
 <h1>Projekte</h1>
 
 <section>
-    <fieldset>
+    <button class="show_filter">Filter Anzeigen</button>
+    <fieldset class="filter">
         <form action="Projekte.html" method="submit">
             <legend>Projektfilter:</legend>
             <label for="project_manager">Projektleiter:</label>
@@ -43,38 +59,25 @@
 
     <ul>
         <li>
-            <h2><a href="Projekt1.html">Mayonanise herstellen</a></h2>
+            <h2><a class="projekt_link"href="Projekt1.html">Mayonanise herstellen</a></h2>
             
-            <p>Um den Herstellungsprozess von Mayonnaise zu verfeinern werden die besten Wissenschaftler des Landes zusammengesucht. Das soll ermöglichen diesen kulinarischen Genuss noch viel besser zu machen.</p>
+            <p class="kurzbeschreibung">Um den Herstellungsprozess von Mayonnaise zu verfeinern werden die besten Wissenschaftler des Landes zusammengesucht. Das soll ermöglichen diesen kulinarischen Genuss noch viel besser zu machen.</p>
         </li>
         <li>
-            <h2><a href="Projekt2.html">Schlaf verbessern</a></h2>
+            <h2><a class="projekt_link" href="Projekt2.html">Schlaf verbessern</a></h2>
 
-            <p>Der andauernde Schlafmangel unter Menschen, speziell Informatikern ist ein großes Problem, unter dem zwei Drittel von Ihnen leiden. Dagegen vorzugehen ist obere Priorität um die Leistungsfähigkeit der Branche zu gewährleisten. Dazu sollen verschiedene einfache und Machbare Maßnahmen recherchiert und beworben werden.</p>
+            <p class="kurzbeschreibung">Der andauernde Schlafmangel unter Menschen, speziell Informatikern ist ein großes Problem, unter dem zwei Drittel von Ihnen leiden. Dagegen vorzugehen ist obere Priorität um die Leistungsfähigkeit der Branche zu gewährleisten. Dazu sollen verschiedene einfache und Machbare Maßnahmen recherchiert und beworben werden.</p>
         </li>
         <li>
-            <h2><a href="Projekt3.html">Rakete bauen</a></h2>
+            <h2><a class="projekt_link" href="Projekt3.html">Rakete bauen</a></h2>
             
-            <p>Eine Rakete bauen. Rakete hoch ins All. Rakete mit viel Treibstoff und viel Kawumm.🚀</p>
+            <p class="kurzbeschreibung">Eine Rakete bauen. Rakete hoch ins All. Rakete mit viel Treibstoff und viel Kawumm.🚀</p>
         </li>
     </ul>
 </section>
 
 
 
-<fieldset>
-    <legend>Anmeldung</legend>
-    <form action="localhost:11111" method="post">
-        <label for="username">Benutzername:</label>
-        <input type="text" name="username">
-        <label for="password">Passwort:</label>
-        <input type = "password" name="password">
-        <input type="submit" value="Anmelden">
-    </form>
-
-</fieldset>
-
-<a href="">Neu Registrieren</a>
 
 <footer> 
     <a href="Impressum.html">Impressum</a>

@@ -5,17 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plan your amazing Projects in minutes with maximum transparency">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/projekt.css">
 </head>
 <body>
-
-
+    
+    
 <header>
-        <picture>
-            <source media="(min-width:1920px)" srcset="../img/header1920x200.png">
-            <source media="(min-width:1280px)" srcset="../img/header1200x133.png">
-            <source media="(min-width:640px)" srcset="../img/header670x67.png">
-            <img src="../img/header320x34.png" alt="header">
-        </picture>
+    <picture>
+        <source media="(min-width:1920px)" srcset="../img/header1920x200.png">
+        <source media="(min-width:1280px)" srcset="../img/header1200x133.png">
+        <source media="(min-width:640px)" srcset="../img/header670x67.png">
+        <img src="../img/header320x34.png" alt="header">
+    </picture>
+
+    
+    <fieldset class="login">
+        <legend>Anmeldung</legend>
+        <form action="localhost:11111" method="post">
+            <label for="username">Benutzername:</label>
+            <input type="text" name="username">
+            <label for="password">Passwort:</label>
+            <input type = "password" name="password">
+            <input type="submit" value="Anmelden">
+        </form>
+        <a href="">Neu Registrieren</a>
+
+    </fieldset>
 </header>
 <nav> 
     <a href="Startseite.html"> <img src="../img/logo.svg"> </a>
@@ -24,68 +40,60 @@
     
 </nav>
 
+<div class="container_title">
+    <img src="../img/Projektlogo.webp">
+    <h1>Mayonaise herstellen</h1>
 
-<h1>Mayonaise herstellen</h1>
-<p>Projektleiter: Patrick Star</p>
-
-<img src="../img/Projektlogo.webp">
-<article>
-<h2 id="kurz">Kurzbeschreibung</h2>
-<p>Um den Herstellungsprozess von Mayonnaise zu verfeinern werden die besten Wissenschaftler des Landes zusammengesucht. Das soll ermöglichen diesen kulinarischen Genuss noch viel besser zu machen.</p>
-
-
-
-<h2 id="lang">Langbeschreibung</h2>
-<p>
-Ist Mayonaise auch ein Instrument?
-
-</p>
-</article>
-<section id="ziele">
-    <h2>Projektziele</h2>
-    <ol>
-        <li>Eier schlagen</li>
-        <li>Umrühren</li>
-        <li>Abfüllen</li>
-    </ol>
-</section>
+    <p>Projektleiter: Patrick Star</p>
+</div>
+<div class="container">
+    <article>
+    <h2 id="kurz">Kurzbeschreibung</h2>
+    <p>Um den Herstellungsprozess von Mayonnaise zu verfeinern werden die besten Wissenschaftler des Landes zusammengesucht. Das soll ermöglichen diesen kulinarischen Genuss noch viel besser zu machen.</p>
+    
+    
+    
+    <h2 id="lang">Langbeschreibung</h2>
+    <p>
+    Ist Mayonaise auch ein Instrument?
+    
+    </p>
+    <section id="ziele">
+        <h2>Projektziele</h2>
+        <ol>
+            <li>Eier schlagen</li>
+            <li>Umrühren</li>
+            <li>Abfüllen</li>
+        </ol>
+    </section>
+    
+    </article>
+    <div class="inhaltsmenue">
+        <a href="Projekt1.html#kurz">zur Kurzberschreibung</a>
+        <a href="Projekt1.html#lang">zur Langbeschreibung</a>
+        <a href="Projekt1.html#ziele">zu den Zielen</a>
+    </div>
+</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<nav>
-    <a href="Projekt1.html#kurz">zur Kurzberschreibung</a>
-    <a href="Projekt1.html#lang">zur Langbeschreibung</a>
-    <a href="Projekt1.html#ziele">zu den Zielen</a>
-</nav>
 <section>
-<fieldset>
-    <legend>Kommentar schreiben</legend>
-    <form action="http://localhost:11111" method="post">
-        <label for="rating">Bewertung:</label>
-        <input type="range" name="rating" min="0" max="5">
-        <label for="comment">Kommentar:</label>
-        <input type = "text" name="comment">
-        <input type="submit" value="Absenden">
-    </form>
-
-</fieldset>
-
+    <fieldset>
+        <legend>Kommentar schreiben</legend>
+            <form action="http://localhost:11111" method="post">
+                <label for="rating">Bewertung:</label>
+                <input type="range" name="rating" min="0" max="5">
+                <label for="comment">Kommentar:</label>
+                <input type = "text" name="comment">
+                <input type="submit" value="Absenden">
+            </form>
+    </fieldset>
 </section>
 
 
 
-<fieldset>
-    <legend>Anmeldung</legend>
-    <form action="localhost:11111" method="post">
-        <label for="username">Benutzername:</label>
-        <input type="text" name="username">
-        <label for="password">Passwort:</label>
-        <input type = "password" name="password">
-        <input type="submit" value="Anmelden">
-    </form>
 
-</fieldset>
 
-<a href="">Neu Registrieren</a>
+
 
 <footer> 
     <a href="Impressum.html">Impressum</a>
