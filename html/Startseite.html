@@ -6,6 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plan your amazing Projects in minutes with maximum transparency">
     <link rel="stylesheet" href="../css/global.css">
+
+    <style>
+        h1 {
+            width: 100%;
+            font-size: 500%;
+            color: purple;
+            background-color: black;
+            height: 500px;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 > span {
+            justify-self: center;
+            text-align: center;
+            align-self: center;
+        }
+
+        .divider {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        .dividedElement {
+            padding-left: 5px;
+            padding-right: 5px;
+            display: flex;
+            border-right: 1px solid;
+            border-left: 1px solid;
+            flex-direction: column;
+            width: 50%;
+
+        }
+
+        .lowerText {
+            
+            animation-name: lowerTextFadeIn;
+            animation-duration: 5s;
+        }
+
+        @keyframes lowerTextFadeIn {
+            0% {
+                opacity: 0%;
+            }
+            100%{
+                opacity: 100%;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
@@ -38,9 +92,11 @@
 </nav>
 
 
-<h1>Willkommen bei Purple Transplannner, <br> Ihrer transperenten Projektplanungssoftware!</h1>
+<h1><span>Willkommen bei Purple Transplannner, </span><br> <span class="lowerText">Ihrer transparenten Projektplanungssoftware!</span></h1>
 
-<article>
+<div class="divider">
+    <div class="dividedElement">
+        <article>
     <h2>Was ist Purple Transplannner?</h2>
     <p> Purple Transplannner ist der neuste Industriestandard für Projektplanung in jeglichen Bereichen. Es wird Ihnen die Planung von Aufgabenschritten innerhalb von Projekten ermöglicht. Durch modernste Algorithmen berechnen wir Ihnen Schätzungen für die Zeitansprüche die sie für Ihr Projekt benötigen. Und vergessen Sie nicht: Planen sie transparent und lila. </p>
     <video width="320" height="240" controls>
@@ -48,6 +104,13 @@
     Your browser does not support the video tag.
 </video>
 </article>
+    </div>
+    <div class="dividedElement">
+        <h2> neuste Projekte </h2> <br>
+        <a href="Projekte.html"> zu den neusten Projekten</a>
+    </div>
+</div>
+
 
 
 
