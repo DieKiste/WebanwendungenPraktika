@@ -14,6 +14,16 @@ input[type="file"] {
   display: none;
 }
 
+.purpleBackgroundInput{
+    background-color: purple;
+    border: none;
+}
+
+.lighterPurpleBackgroundInput{
+    background-color: #cc00cc;
+    border: none;
+}
+
 .custom-file-upload {
   border: 1px solid #ccc;
   display: inline-block;
@@ -28,6 +38,7 @@ article {
 
 textarea{
     width: 100%;
+    
 }
 
 </style>
@@ -71,28 +82,28 @@ textarea{
 
 
 
-    <h1><input type="text" id="Projectname" placeholder="Projektnamename" style="font-size: 200%;
+    <h1><input type="text" id="Projectname" placeholder="Projektname" style="font-size: 200%;
     font-family: 'Courier New', Courier, monospace;
-    margin-left: 10px;"></h1>
-    <p>Projektmanager: <input type="text" id="Projectmanager" placeholder="Projektmanager"></p>
+    margin-left: 10px;" class="lighterPurpleBackgroundInput"></h1>
+    <p>Projektmanager: <input type="text" id="Projectmanager" class="lighterPurpleBackgroundInput" placeholder="Projektmanager"></p>
 </div>
 
 
 <div class="container">
 <article>
 <h2 id="kurz">Kurzbeschreibung</h2>
-<textarea type="text" id="shortdescription" placeholder="Mein Tolles Projekt!"></textarea>
+<textarea type="text" id="shortdescription" placeholder="Mein Tolles Projekt!" class="purpleBackgroundInput"></textarea>
 
 
 
 <h2 id="lang">Langbeschreibung</h2>
-<textarea type="text" id="longdescription" placeholder="Hier steht ihre sehr sehr sehr sehr sehr ausfürliche Beschreibung"></textarea>
+<textarea type="text" class="purpleBackgroundInput" id="longdescription" placeholder="Hier steht ihre sehr sehr sehr sehr sehr ausfürliche Beschreibung"></textarea>
 
 <section id="ziele">
     <h2>Projektziele</h2>
     <ol>
-        <li><input type="text" id="projectgoal1" placeholder="Projektziel1"></li>
-        <li><input type="text" id="projectgoal2" placeholder="Projektziel2"></li>
+        <li><input type="text" id="projectgoal1" class="purpleBackgroundInput" placeholder="Projektziel1"></li>
+        <li><input type="text" id="projectgoal2" class="purpleBackgroundInput" placeholder="Projektziel2"></li>
         
     </ol>
 </section>
