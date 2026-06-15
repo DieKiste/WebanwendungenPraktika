@@ -27,4 +27,20 @@ class Projekt {
     {
         return this._kurzbeschreibung
     }
+
+    GetPlannedTimeOfProject (ProjektId) {
+        let plannedTime = 0   
+        projekt_artefakte.forEach(element => {
+            if(element._projektId == ProjektId)
+            {
+                artefakte.forEach(artefakt => {
+                    if(artefakt._Id == element.artefaktId)
+                    {
+                        plannedTime = plannedTime + artefakt._Geplante_Arbeitszeit
+                    }
+                });
+            }
+           });
+        return plannedTime;
+    }
 }

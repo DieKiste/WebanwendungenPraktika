@@ -1,7 +1,7 @@
 class Projekt_Artefakt {
 
-    constructor(ProjektID , ArtefaktID){
-        this._ProjektID = ProjektID
-        this._ArtefaktID = ArtefaktID
+    constructor(projektId , artefaktId){
+        this._projektId = projektId
+        this._prtefaktId = artefaktId
     }
 }
