@@ -1,4 +1,4 @@
-class Projekt_Aufgabenberech {
+class Projekt_Aufgabenbereich {
 
     constructor(ProjektID , AufgabenbereichID){
         this._ProjektID = ProjektID
