@@ -35,3 +35,28 @@ artefakt_projekt6 = new Projekt_Artefakt(3,6);
 let projekte = [projekt1, projekt2, projekt3];
 let artefakte = [artefakt11, artefakt12, artefakt21, artefakt22, artefakt31, artefakt32];
 let projekt_artefakte = [artefakt_projekt1, artefakt_projekt2, artefakt_projekt3, artefakt_projekt4, artefakt_projekt5, artefakt_projekt6];
+
+function GetPlannedTimeOfProject (ProjektId) {
+        let plannedTime = 0   ;
+        for(i = 0; i < projekt_artefakte.length;i++)
+        {
+            if(projekt_artefakte[i]._projektId == ProjektId)
+            {
+                console.log("d1");
+                for(j=0;j<artefakte.length;j++)
+                {
+                    if(artefakte[j]._Id == projekt_artefakte[i]._artefaktId)
+                    {
+                        
+                        plannedTime = plannedTime + artefakte[j]._Geplante_Arbeitszeit;
+                    }
+                }
+            }
+        }
+        
+            
+           
+        return plannedTime;
+    }
+
+console.log(GetPlannedTimeOfProject(3))
