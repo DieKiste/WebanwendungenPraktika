@@ -1,20 +1,55 @@
 //Mayonnaise Projekt
-projekt1 = new Projekt(1, "Mayonnaise herstellen", "Um den Herstellungsprozess von Mayonnaise zu verfeinern werden die besten Wissenschaftler des Landes zusammengesucht. Das soll ermöglichen diesen kulinarischen Genuss noch viel besser zu machen.", "./img/Projektlogo.webp", "2026-06-7");
+projekt1 = new Projekt(
+    1,
+    "Mayonnaise herstellen",
+    "Um den Herstellungsprozess von Mayonnaise zu verfeinern werden die besten Wissenschaftler des Landes zusammengesucht. Das soll ermöglichen diesen kulinarischen Genuss noch viel besser zu machen.",
+    "./img/Projektlogo.webp",
+    "2026-06-7");
 console.log(projekt1);
-aufgabenbereich1 = new Aufgabenbereich(1, "Herstellung", "Die einzelnen Schritte zur Herstellung der Mayonnaise");
-artefakt11 = new Artefakt(1, "Eier Schlagen", "Eier in den Topf packen und mit den Schneebesen Schlagen.", 1, 0.5);
-artefakt12 = new Artefakt(2, "Umrühren", "Ganz viel rühren", 1, 0.2);
+aufgabenbereich1 = new Aufgabenbereich(
+    1,
+    "Herstellung",
+    "Die einzelnen Schritte zur Herstellung der Mayonnaise");
+artefakt11 = new Artefakt(1,
+    "Eier Schlagen",
+    "Eier in den Topf packen und mit den Schneebesen Schlagen.",
+    1,
+    0.5);
+artefakt12 = new Artefakt(
+    2,
+    "Umrühren",
+    "Ganz viel rühren",
+    1,
+    0.2);
 
 aufgabenbereich_projekt1 = new Projekt_Aufgabenbereich(1,1);
 artefakt_projekt1 = new Projekt_Artefakt(1,1);
 artefakt_projekt2 = new Projekt_Artefakt(1,2);
 
 //Schlaf verbessern 
-projekt2 = new Projekt(2, "Schlaf verbessern", "Der andauernde Schlafmangel unter Menschen, speziell Informatikern ist ein großes Problem, unter dem zwei Drittel von Ihnen leiden", "./img/schlaf.webp", "2030-06-01");
+projekt2 = new Projekt(
+    2,
+    "Schlaf verbessern",
+    "Der andauernde Schlafmangel unter Menschen, speziell Informatikern ist ein großes Problem, unter dem zwei Drittel von Ihnen leiden",
+    "./img/schlaf.webp",
+    "2030-06-01");
 console.log(projekt2);
-aufgabenbereich2 = new Aufgabenbereich(2, "Schlafexperimente", "Es werden verschiedene Experimente durchgeführt.");
-artefakt21 = new Artefakt(3, "Medikatentest", "Vorgesehen ist die Testung von verschieden Substanzen", 2, 100);
-artefakt22 = new Artefakt(4, "Eine Nacht drüber Schlafen", "Durch den Schlaf werden die Ergebnisse der Experimente besser verarbeitet und die Informationen werden besser verknüpft.", 2, 8);
+aufgabenbereich2 = new Aufgabenbereich(
+    2,
+    "Schlafexperimente",
+    "Es werden verschiedene Experimente durchgeführt.");
+artefakt21 = new Artefakt(
+    3,
+    "Medikatentest",
+    "Vorgesehen ist die Testung von verschieden Substanzen",
+    2,
+    100);
+artefakt22 = new Artefakt(
+    4,
+    "Eine Nacht drüber Schlafen",
+    "Durch den Schlaf werden die Ergebnisse der Experimente besser verarbeitet und die Informationen werden besser verknüpft.",
+    2,
+    8);
 
 aufgabenbereich_projekt2 = new Projekt_Aufgabenbereich(2,2);
 artefakt_projekt3 = new Projekt_Artefakt(2,3);
@@ -22,11 +57,29 @@ artefakt_projekt4 = new Projekt_Artefakt(2,4);
 
 
 //Rakete bauen 
-projekt3 = new Projekt(3, "Rakete bauen", "Eine Rakete bauen. Rakete hoch ins All. Rakete mit viel Treibstoff und viel Kawumm.🚀", "./img/rakete.wepb", "2040-01-01");
+projekt3 = new Projekt(
+    3,
+    "Rakete bauen",
+    "Eine Rakete bauen. Rakete hoch ins All. Rakete mit viel Treibstoff und viel Kawumm.🚀",
+    "./img/rakete.wepb",
+    "2040-01-01");
 console.log(projekt3);
-aufgabenbereich3 = new Aufgabenbereich(3, "Bauphase", "Die Rakete wird gebaut.");
-artefakt31 = new Artefakt(5, "Rakete zusammenschweißen", "Mit einem Schweißgerät und so", 3, 10000);
-artefakt32 = new Artefakt(6, "Rakete aufstellen", "Wir nehmen die Rakete und schieben sie wo anders hin", 3, 40);
+aufgabenbereich3 = new Aufgabenbereich(
+    3,
+    "Bauphase",
+    "Die Rakete wird gebaut.");
+artefakt31 = new Artefakt(
+    5,
+    "Rakete zusammenschweißen",
+    "Mit einem Schweißgerät und so",
+    3,
+    10000);
+artefakt32 = new Artefakt(
+    6,
+    "Rakete aufstellen",
+    "Wir nehmen die Rakete und schieben sie wo anders hin",
+    3,
+    40);
 
 aufgabenbereich_projekt1 = new Projekt_Aufgabenbereich(3,3);
 artefakt_projekt5 = new Projekt_Artefakt(3,5);

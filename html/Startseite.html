@@ -49,6 +49,11 @@
             animation-name: lowerTextFadeIn;
             animation-duration: 5s;
         }
+        .upperText{
+            opacity: 0%;
+            animation-name: upperTextFadeOut;
+            animation-duration: 5s;
+        }
 
         @keyframes lowerTextFadeIn {
             0% {
@@ -56,6 +61,14 @@
             }
             100%{
                 opacity: 100%;
+            }
+        }
+        @keyframes upperTextFadeOut {
+            0% {
+                opacity: 100%;
+            }
+            100%{
+                opacity: 0%;
             }
         }
     </style>
@@ -92,7 +105,7 @@
 </nav>
 
 
-<h1><span>Willkommen bei Purple Transplannner, </span><br> <span class="lowerText">Ihrer transparenten Projektplanungssoftware!</span></h1>
+<h1><span class="upperText">Willkommen bei Purple Transplannner, </span><br> <span class="lowerText">Ihrer transparenten Projektplanungssoftware!</span></h1>
 
 <div class="divider">
     <div class="dividedElement">
