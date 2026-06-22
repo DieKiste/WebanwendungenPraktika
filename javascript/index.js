@@ -91,7 +91,7 @@ let projekt_artefakte = [artefakt_projekt1, artefakt_projekt2, artefakt_projekt3
 
 let translations = new Map([["English", "../languages/eng.json"], ["German", "../languages/ger.json"]]);
 
-console.log(JSON.stringify(translationEng))
+//console.log(JSON.stringify(translationEng))
 
 function GetPlannedTimeOfProject (ProjektId) {
         let plannedTime = 0   ;
@@ -99,7 +99,6 @@ function GetPlannedTimeOfProject (ProjektId) {
         {
             if(projekt_artefakte[i]._projektId == ProjektId)
             {
-                console.log("d1");
                 for(j=0;j<artefakte.length;j++)
                 {
                     if(artefakte[j]._Id == projekt_artefakte[i]._artefaktId)
@@ -116,7 +115,7 @@ function GetPlannedTimeOfProject (ProjektId) {
         return plannedTime;
     }
 
-console.log(GetPlannedTimeOfProject(3))
+console.log(GetPlannedTimeOfProject(2))
 
 function sort_project_anfangsdatum(){
     projekte.sort(
