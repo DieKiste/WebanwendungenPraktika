@@ -232,7 +232,23 @@ function addUnsentProject(Project)
     
 }
 
-function sendArtefactsToAPI(Artefact)
+function sendUnsendData()
+{
+    console.log("Trying to send UnsendData")
+    let data = localStorage.getItem("unsentData");
+    if(!data){
+        return
+    }
+    for (let Project of data.Projects){
+        sendProjectToAPI(Project);
+    }
+    for (let Artefact of data.Artefacts){
+        sendArtefactToAPI(Artefact);
+    }
+    for (let Task of data.Tasks){
+        sendTaskToAPI(Task);
+    }
+}function sendArtefactsToAPI(Artefact)
 {
     let response = fetch("http://localhost:8001/",{  //"https://scl.fh-bielefeld.de/WBA/projectsAPI"
         body: JSON.stringify(Artefact),
@@ -446,7 +462,8 @@ function addUnsentProjectArtifact(Task)
 
 
 window.onload = function(){
-    
-    sendProjectToAPI(projekt2)
+
+    sendUnsendData();
+    sendProjectToAPI(projekt2);
 
 }
