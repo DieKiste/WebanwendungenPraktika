@@ -1,26 +1,4 @@
-function getData(url) {
-    // Default options are marked with *
-    return fetch(url, {
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'omit', // include, *omit
-        headers: {
-        'user-agent': 'Mozilla/4.0 MDN Example',
-        'content-type': 'none',
-        },
-        method: 'GET', // *GET, PUT, DELETE, etc.
-        mode: 'same-origin', // no-cors, *same-origin
-        redirect: 'follow', // *manual, error
-        referrer: 'no-referrer', // *client
-    })
-    .then(response => response.json()) // parses response to JSON
-    }
-
 window.onload = function() {
-    // getData('https://scl.fh-bielefeld.de/WBA/projects.json').then(
-    // function(data) {
-    //     console.log(data);
-    // }) // JSON from `response.json()` call
-    //     .catch(error => console.error(error))
     this.fetch('../json/projects.json')
     .then(response => response.json())
     .then(data => {
