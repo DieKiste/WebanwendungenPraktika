@@ -173,11 +173,12 @@ function createUnsentDataObject()
     data.Artefacts = []
     data.Tasks = []
     localStorage.setItem("unsentData", JSON.stringify(data))
+    return JSON.stringify(data)
 }
 
 function sendProjectToAPI(Project)
 {
-    let response = fetch("https://scl.fh-bielefeld.de/WBA/projectsAPI",{
+    let response = fetch("http://localhost:8001/",{  //"https://scl.fh-bielefeld.de/WBA/projectsAPI"
         body: JSON.stringify(Project),
         cache: "no-cache",
         credentials: "same-origin",
@@ -189,19 +190,22 @@ function sendProjectToAPI(Project)
         redirect:"follow",
         referrer:'no-referrer'
     })
-    .then(response => response.json)
-    .catch(
-        addUnsentProject(Project)
-    )
-
-    if(response.statusCode == 200){
-        return True
+    .then(response => {
+        console.log(response)
+        if(response.status == 200){
+        console.log("erfolgreich abgesendet")
+        return true
     }
     else
     {
+        console.log("Project Could not be sent, saving to local Storage, status: " + response.status)
         addUnsentProject(Project)
-        console.log("Project Could not be sent, saving to local Storage")
+       
     }
+    })
+    .catch(
+        addUnsentProject(Project)
+    )
 }
 
 function addUnsentProject(Project)
@@ -210,16 +214,27 @@ function addUnsentProject(Project)
     let data = localStorage.getItem("unsentData")
     
     if(!data){
-        createUnsentDataObject()
+        data = createUnsentDataObject()
     }
+    
     data=JSON.parse(data)
     console.log(data)
-
-    
+    for(i=0;i<data.Projects.length;i++){
+        if(data.Projects[i]._id == Project._id){
+            console.log("Project already in storage")
+            return
+        }
+    }
+    data.Projects.push(Project)
+    localStorage.setItem("unsentData", JSON.stringify(data))
     
 }
 
 
+
+
 window.onload = function(){
-        sendProjectToAPI(projekt2)
+    
+    sendProjectToAPI(projekt2)
+
 }
