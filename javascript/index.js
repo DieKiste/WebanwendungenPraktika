@@ -172,6 +172,8 @@ function createUnsentDataObject()
     data.Projects = []
     data.Artefacts = []
     data.Tasks = []
+    data.ProjectTasks = []
+    data.ProjectArtefacts = []
     localStorage.setItem("unsentData", JSON.stringify(data))
     return JSON.stringify(data)
 }
@@ -230,7 +232,217 @@ function addUnsentProject(Project)
     
 }
 
+function sendArtefactsToAPI(Artefact)
+{
+    let response = fetch("http://localhost:8001/",{  //"https://scl.fh-bielefeld.de/WBA/projectsAPI"
+        body: JSON.stringify(Artefact),
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers:{
+            
+        },
+        method: 'POST',
+        mode:"cors",
+        redirect:"follow",
+        referrer:'no-referrer'
+    })
+    .then(response => {
+        console.log(response)
+        if(response.status == 200){
+        console.log("erfolgreich abgesendet")
+        return true
+    }
+    else
+    {
+        console.log("Artifact Could not be sent, saving to local Storage, status: " + response.status)
+        addUnsentArtefact(Artefact)
+       
+    }
+    })
+    .catch(
+        addUnsentArtefact(Artefact)
+    )
+}
 
+function addUnsentArtefact(Artefact)
+{
+    
+    let data = localStorage.getItem("unsentData")
+    
+    if(!data){
+        data = createUnsentDataObject()
+    }
+    
+    data=JSON.parse(data)
+    console.log(data)
+    for(i=0;i<data.Artefacts.length;i++){
+        if(data.Artefacts[i]._id == Artefact._id){
+            console.log("Art already in storage")
+            return
+        }
+    }
+    data.Artefacts.push(Artefact)
+    localStorage.setItem("unsentData", JSON.stringify(data))
+}
+
+function sendTaskToAPI(Task)
+{
+    let response = fetch("http://localhost:8001/",{  //"https://scl.fh-bielefeld.de/WBA/projectsAPI"
+        body: JSON.stringify(Task),
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers:{
+            
+        },
+        method: 'POST',
+        mode:"cors",
+        redirect:"follow",
+        referrer:'no-referrer'
+    })
+    .then(response => {
+        console.log(response)
+        if(response.status == 200){
+        console.log("erfolgreich abgesendet")
+        return true
+    }
+    else
+    {
+        console.log("Task Could not be sent, saving to local Storage, status: " + response.status)
+        addUnsentTask(Task)
+       
+    }
+    })
+    .catch(
+        addUnsentTask(Task)
+    )
+}
+
+function addUnsentTask(Task)
+{
+    
+    let data = localStorage.getItem("unsentData")
+    
+    if(!data){
+        data = createUnsentDataObject()
+    }
+    
+    data=JSON.parse(data)
+    console.log(data)
+    for(i=0;i<data.Tasks.length;i++){
+        if(data.Tasks[i]._id == Task._id){
+            console.log("Art already in storage")
+            return
+        }
+    }
+    data.Tasks.push(Task)
+    localStorage.setItem("unsentData", JSON.stringify(data))
+}
+
+function sendProjectTaskToAPI(Task)
+{
+    let response = fetch("http://localhost:8001/",{  //"https://scl.fh-bielefeld.de/WBA/projectsAPI"
+        body: JSON.stringify(Task),
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers:{
+            
+        },
+        method: 'POST',
+        mode:"cors",
+        redirect:"follow",
+        referrer:'no-referrer'
+    })
+    .then(response => {
+        console.log(response)
+        if(response.status == 200){
+        console.log("erfolgreich abgesendet")
+        return true
+    }
+    else
+    {
+        console.log("Task Could not be sent, saving to local Storage, status: " + response.status)
+        addUnsentProjectTask(Task)
+       
+    }
+    })
+    .catch(
+        addUnsentProjectTask(Task)
+    )
+}
+
+function addUnsentProjectTask(Task)
+{
+    
+    let data = localStorage.getItem("unsentData")
+    
+    if(!data){
+        data = createUnsentDataObject()
+    }
+    
+    data=JSON.parse(data)
+    console.log(data)
+    for(i=0;i<data.ProjectTasks.length;i++){
+        if(data.ProjectTasks[i]._id == Task._id){
+            console.log("Art already in storage")
+            return
+        }
+    }
+    data.ProjectTasks.push(Task)
+    localStorage.setItem("unsentData", JSON.stringify(data))
+}
+
+function sendProjectArtifactToAPI(Task)
+{
+    let response = fetch("http://localhost:8001/",{  //"https://scl.fh-bielefeld.de/WBA/projectsAPI"
+        body: JSON.stringify(Task),
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers:{
+            
+        },
+        method: 'POST',
+        mode:"cors",
+        redirect:"follow",
+        referrer:'no-referrer'
+    })
+    .then(response => {
+        console.log(response)
+        if(response.status == 200){
+        console.log("erfolgreich abgesendet")
+        return true
+    }
+    else
+    {
+        console.log("Task Could not be sent, saving to local Storage, status: " + response.status)
+        addUnsentProjectArtifact(Task)
+       
+    }
+    })
+    .catch(
+        addUnsentProjectArtifact(Task)
+    )
+}
+
+function addUnsentProjectArtifact(Task)
+{
+    
+    let data = localStorage.getItem("unsentData")
+    
+    if(!data){
+        data = createUnsentDataObject()
+    }
+    
+    data=JSON.parse(data)
+    console.log(data)
+    for(i=0;i<data.ProjectArtefacts.length;i++){
+        if(data.ProjectTasks[i]._id == Task._id){
+            console.log("Art already in storage")
+            return
+        }
+    }
+    data.ProjectArtefacts.push(Task)
+    localStorage.setItem("unsentData", JSON.stringify(data))
+}
 
 
 window.onload = function(){
