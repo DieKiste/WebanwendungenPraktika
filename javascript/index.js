@@ -91,8 +91,6 @@ let projekt_artefakte = [artefakt_projekt1, artefakt_projekt2, artefakt_projekt3
 
 let translations = new Map([["English", "../languages/eng.json"], ["German", "../languages/ger.json"]]);
 
-console.log(JSON.stringify(translationEng))
-
 function GetPlannedTimeOfProject (ProjektId) {
         let plannedTime = 0   ;
         for(i = 0; i < projekt_artefakte.length;i++)
@@ -167,3 +165,62 @@ console.log(
         laufzeit: GetPlannedTimeOfProject(p._id)
     }))
 );
+
+function createUnsentDataObject()
+{
+    console.log("creatingObject")
+    let data = {}
+    data.Projects = []
+    data.Artefacts = []
+    data.Tasks = []
+    localStorage.setItem("unsentData", JSON.stringify(data))
+}
+
+function sendProjectToAPI(Project)
+{
+    let response = fetch("https://scl.fh-bielefeld.de/WBA/projectsAPI",{
+        body: JSON.stringify(Project),
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers:{
+            
+        },
+        method: 'POST',
+        mode:"cors",
+        redirect:"follow",
+        referrer:'no-referrer'
+    })
+    .then(response => response.json)
+    .catch(
+        addUnsentProject(Project)
+    )
+
+    if(response.statusCode == 200){
+        return True
+    }
+    else
+    {
+        addUnsentProject(Project)
+        console.log("Project Could not be sent, saving to local Storage")
+    }
+}
+
+function addUnsentProject(Project)
+{
+    
+    let data = localStorage.getItem("unsentData")
+    
+    if(!data){
+        createUnsentDataObject()
+    }
+    data=JSON.parse(data)
+    console.log(data)
+
+    
+    
+}
+
+
+window.onload = function(){
+        sendProjectToAPI(projekt2)
+}
