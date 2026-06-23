@@ -4,11 +4,11 @@ class Projekt {
     {
         this._id = id
         this._titel = titel
-        
-        
+        this._kurzbeschreibung = kurzbeschreibung
         this._projektlogo = projektlogo
         this._startdatum = startdatum
     }
+    
 
     set kurzbeschreibung( param1)
     {

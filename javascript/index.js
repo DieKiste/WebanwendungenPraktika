@@ -97,7 +97,6 @@ function GetPlannedTimeOfProject (ProjektId) {
         {
             if(projekt_artefakte[i]._projektId == ProjektId)
             {
-                console.log("d1");
                 for(j=0;j<artefakte.length;j++)
                 {
                     if(artefakte[j]._Id == projekt_artefakte[i]._artefaktId)
@@ -114,7 +113,7 @@ function GetPlannedTimeOfProject (ProjektId) {
         return plannedTime;
     }
 
-console.log(GetPlannedTimeOfProject(3))
+console.log(GetPlannedTimeOfProject(2))
 
 function sort_project_anfangsdatum(){
     projekte.sort(
