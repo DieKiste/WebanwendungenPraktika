@@ -53,5 +53,7 @@ window.onload = function() {
     )
     .catch(err => console.error(err));
 
+    
+    sendUnsendData();
     sendProjectToAPI(projekt2)
     };
