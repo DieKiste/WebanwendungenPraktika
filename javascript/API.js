@@ -54,6 +54,7 @@ window.onload = function() {
     .catch(err => console.error(err));
 
     
-    sendUnsendData();
+    sendUnsentData();
     sendProjectToAPI(projekt2)
+    sendArtefactToAPI(artefakt21)
     };

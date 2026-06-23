@@ -195,24 +195,26 @@ function sendProjectToAPI(Project)
     .then(response => {
         console.log(response)
         if(response.status == 200){
-        console.log("erfolgreich abgesendet")
-        return true
-    }
-    else
-    {
-        console.log("Project Could not be sent, saving to local Storage, status: " + response.status)
-        addUnsentProject(Project)
-       
-    }
+            console.log("erfolgreich abgesendet")
+            return true
+        }
+        else
+        {
+            console.log("Project Could not be sent, saving to local Storage, status: " + response.status)
+            addUnsentProject(Project)
+        
+        }
     })
-    .catch(
+    .catch( () => {
+        console.log("error while trying to fetch")
         addUnsentProject(Project)
+    }
     )
 }
 
 function addUnsentProject(Project)
 {
-    
+    console.log("entering addUnsetProject id: " + Project._id)
     let data = localStorage.getItem("unsentData")
     
     if(!data){
@@ -232,14 +234,18 @@ function addUnsentProject(Project)
     
 }
 
-function sendUnsendData()
+function sendUnsentData()
 {
-    console.log("Trying to send UnsendData")
+    console.log("Trying to send UnsentData")
     let data = localStorage.getItem("unsentData");
     if(!data){
         return
     }
+    data = JSON.parse(data)
+    localStorage.removeItem("unsentData")
+
     for (let Project of data.Projects){
+        
         sendProjectToAPI(Project);
     }
     for (let Artefact of data.Artefacts){
@@ -248,7 +254,14 @@ function sendUnsendData()
     for (let Task of data.Tasks){
         sendTaskToAPI(Task);
     }
-}function sendArtefactsToAPI(Artefact)
+    for (let ProjectTask of data.ProjectTasks){
+        sendProjectTaskToAPI(ProjectTask);
+    }
+    for (let ProjectArtefact of data.ProjectArtefacts){
+        sendProjectArtifactToAPI(ProjectArtefact);
+    }
+}
+function sendArtefactToAPI(Artefact)
 {
     let response = fetch("http://localhost:8001/",{  //"https://scl.fh-bielefeld.de/WBA/projectsAPI"
         body: JSON.stringify(Artefact),
@@ -275,8 +288,10 @@ function sendUnsendData()
        
     }
     })
-    .catch(
+    .catch( () =>{
         addUnsentArtefact(Artefact)
+    }
+        
     )
 }
 
@@ -328,8 +343,10 @@ function sendTaskToAPI(Task)
        
     }
     })
-    .catch(
+    .catch( () =>{
         addUnsentTask(Task)
+    }
+        
     )
 }
 
@@ -381,8 +398,10 @@ function sendProjectTaskToAPI(Task)
        
     }
     })
-    .catch(
+    .catch( () => {
         addUnsentProjectTask(Task)
+    }
+        
     )
 }
 
@@ -434,8 +453,10 @@ function sendProjectArtifactToAPI(Task)
        
     }
     })
-    .catch(
+    .catch( () => {
         addUnsentProjectArtifact(Task)
+    }
+        
     )
 }
 
